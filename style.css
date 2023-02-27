@@ -1,0 +1,115 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,200;9..144,400;9..144,500;9..144,700&family=League+Spartan:wght@400;700&family=Overpass+Mono:wght@300;400;500;600;700&family=Overpass:wght@400;700&family=Red+Hat+Text:wght@400;700&display=swap');
+html {
+  box-sizing: border-box;
+}
+
+body {
+  
+  font-family: 'League Spartan', sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  background-color: hsl(222, 26%, 31%);
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:hsl(0, 0%, 100%);
+}
+.calculator-container{
+  overflow: hidden;
+  width:450px;
+  border-radius: 15px;
+
+}
+
+/* display */
+.calculator-display{
+  background-color: hsl(224, 36%, 15%);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom:20px;
+  border-radius: 10px;
+}
+.calculator-display h1{
+  margin:0px;
+  padding:25px;
+  overflow-x:auto;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+/* buttons */
+.calculator-buttons{
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-gap: 20px;
+  padding:25px;
+  background-color: hsl(223, 31%, 20%);
+}
+button{
+  color:hsl(221, 14%, 31%);
+  text-align: center;
+  text-transform: uppercase;
+  min-height:50px;
+  border-radius: 7px;
+  cursor: pointer;
+  background-color: hsl(30, 25%, 89%);
+  font-family: 'League Spartan', sans-serif;
+  outline: none;
+  border: none;
+  font-size: 34px;
+  box-shadow: 0px 3px 0px 0px hsl(28, 16%, 65%);
+  
+}
+button:hover{
+  filter: brightness(110%);
+}
+button:active{
+  box-shadow: none;
+  transform: translateY(2px);
+}
+button:focus{
+  outline: none;
+}
+.equal-sign{
+  color:hsl(0, 0%, 100%);
+  background-color:hsl(6, 63%, 50%);
+  box-shadow: 0px 3px 0px 0px hsl(6, 70%, 34%);
+  grid-column: 3/span 2;
+
+}
+.clear{
+  grid-column: 1/span 2;
+}
+
+.clear, .del{
+  background-color: hsl(225, 21%, 49%);
+  color:hsl(0, 0%, 100%);
+  box-shadow: 0px 3px 0px 0px hsl(224, 28%, 35%);
+}
+
+
+@media screen and (max-width: 600px){
+  .calculator-container{
+    width:95%;
+  }
+}
