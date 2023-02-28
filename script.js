@@ -7,6 +7,8 @@ let firstValue = 0;
 let currentOperator = '';
 let awaitingNextVal = false;
 
+const toggleSwitch = document.querySelector('input[type="checkbox');
+
 //display number on screen
 function displayNum(number){
     //replace the number if first value is entered
@@ -83,6 +85,7 @@ buttons.forEach((btn)=>{
         btn.addEventListener('click',()=>addDecimal());
     }
 })
+
 //clear what on screen
 function clearScreen(){
 firstValue = 0;
@@ -90,6 +93,32 @@ operator = '';
 awaitingNextVal = false;
     calculatorDisplay.textContent = '0';
 }   
+//orange mode
+function orangeMode(){
+    calculatorDisplay.style.color = 'var(--key-color-dark)';
+    document.querySelector('.header').style.color = 'var(--key-color-dark)';
+}
+function blueMode(){
+    calculatorDisplay.style.color = 'var(--key-light-dark)';
+    document.querySelector('.header').style.color = 'var(--key-light-dark)';
+}
 
+//change theme dynamically
+function changeTheme(e){
+    if(e.target.checked){
+        document.documentElement.setAttribute('data-theme', 'orange');
+        orangeMode();
+        
+    } else{
+        document.documentElement.setAttribute('data-theme','blue');
+        blueMode();
+        
+    }
+}
+//use local storage to load previous theme
+
+
+//event listeners
+toggleSwitch.addEventListener('change',changeTheme);
 clearBtn.addEventListener('click',clearScreen);
 
